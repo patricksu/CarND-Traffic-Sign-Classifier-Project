@@ -109,10 +109,10 @@ Dropout: 0.8
 Grayscale
 Augmented (rotation, shear, translation)
 
-| Dropout Keep_Prob     |      Valid_Loss      |   Valid_Acc     |       Test_Loss    |     Test_Acc
-|:------:|:-------------:| :-------------:| :-------------:| :-------------:| 
+|Dropout Keep_Prob| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
+|:---------------:|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.5         		|    							|  |  |  |
-| 0.8           |     |  |  |  |
+| 0.8           |  0.015   | 0.997 | 0.308 | 0..950 | 0.315 | 0.937
 
 My final model results were:
 * training set accuracy of ?
