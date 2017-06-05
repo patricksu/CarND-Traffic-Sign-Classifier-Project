@@ -119,6 +119,17 @@ Grayscale + Normalize + Dropout (0.8) + TwoStageConcat
 | 0.01 | 0.998 | 0.341 | 0.921 | 0.519 | 0.920 |
 ## It is overfitted. May optimize with lower dropout keep_prob or L2 regularization. Experiment later.
 
+Hist + Normalize + Dropout (0.8)
+| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
+|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
+| 0.003 | 0.999 | 0.204 | 0.964 | 0.189 | 0.955 |
+
+Hist + Normalize + Dropout (0.8) + Augmentation
+| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
+|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
+| 0.003 | 0.999 | 0.204 | 0.964 | 0.189 | 0.955 |
+
+
 
 My final model results were:
 * training set accuracy of ?
