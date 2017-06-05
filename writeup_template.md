@@ -127,11 +127,11 @@ Hist + Normalize + Dropout (0.8)
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.003 | 0.999 | 0.204 | 0.964 | 0.189 | 0.955 |
 
-Hist + Normalize + Dropout (0.8) + Augmentation
+Hist + Normalize + Dropout (0.8) + Augmentation (x4)
 
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
-| 0.003 | 0.999 | 0.204 | 0.964 | 0.189 | 0.955 |
+| 0.001 | 1.000 | 0.153 | 0.964 | 0.222 | 0.955 |
 
 
 
