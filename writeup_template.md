@@ -112,7 +112,8 @@ Augmented (rotation, shear, translation)
 |Dropout Keep_Prob| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------------:|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.5         		|    							|  |  |  |
-| 0.8           |  0.015   | 0.997 | 0.308 | 0..950 | 0.315 | 0.937
+| 0.65   | 0.049 | 0.991 | 0.282 | 0.942 | 0.324 | 0.929 |
+| 0.8    | 0.015 | 0.997 | 0.308 | 0.950 | 0.315 | 0.937 |
 
 My final model results were:
 * training set accuracy of ?
