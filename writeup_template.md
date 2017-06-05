@@ -104,10 +104,7 @@ To train the model, I used an ....
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-Normalize
-Dropout: 0.8
-Grayscale
-Augmented (rotation, shear, translation)
+Grayscale + Normalize + Dropout
 
 |Dropout Keep_Prob| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------------:|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
@@ -115,6 +112,12 @@ Augmented (rotation, shear, translation)
 | 0.65   | 0.049 | 0.991 | 0.282 | 0.942 | 0.324 | 0.929 |
 | 0.8    | 0.015 | 0.997 | 0.308 | 0.950 | 0.315 | 0.937 |
 | 0.9    | 0.009 | 0.998 | 0.284 | 0.931 | 0.403 | 0.928 |
+
+Grayscale + Normalize + Dropout (0.8) + TwoStageConcat
+| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
+|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
+| 0.01 | 0.998 | 0.341 | 0.921 | 0.519 | 0.920 |
+## It is overfitted. May optimize with lower dropout keep_prob or L2 regularization. Experiment later.
 
 
 My final model results were:
