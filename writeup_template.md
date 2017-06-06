@@ -20,11 +20,6 @@ The goals / steps of this project are the following:
 [image1]: ./report_images/Train_Count_by_Sign.png "Visualization"
 [image2]: ./report_images/Show_CLAHE.png "CLAHE"
 [image3]: ./report_images/valid_loss.png "valid loss curve"
-[image4]: ./web_images/img1.jpg "Traffic Sign 1"
-[image5]: ./web_images/img2.jpg "Traffic Sign 2"
-[image6]: ./web_images/img3.jpg "Traffic Sign 3"
-[image7]: ./web_images/img4.jpg "Traffic Sign 4"
-[image8]: ./web_images/img5.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -148,6 +143,9 @@ My final model results (using Step 3 model) were:
 * validation set accuracy of 0.965
 * test set accuracy of 0.958
 
+<img src="./report_images/img1.jpg" width="150">
+<img src="./report_images/img1.jpg" width="150">
+
 The LeNet has been applied on this dataset with satisfactory results. I modifed the architecture a little bit by reducing the number of filters and fully-connected nodes, and could not find any significant improvement (> 0.5%). With normalization,dropout and histogram equalization, I achieved 95.8% test accuracy. The final accuracy results show that my model works reasonably well. Note that loss results show some overfitting problems, as the training loss is 0.001, validation loss is 0.153, and test loss is 0.222. This is not a severe problem, as long as the accuracy prediction is good. 
  
 
@@ -158,11 +156,6 @@ The LeNet has been applied on this dataset with satisfactory results. I modifed 
 Here are five German traffic signs that I found on the web:
 
 <img src="./web_images/img1.jpg" width="150"> <img src="./web_images/img2.jpg" width="150"> <img src="./web_images/img3.jpg" width="150"> <img src="./web_images/img4.jpg" width="150"> <img src="./web_images/img5.jpg" width="150">
-
-
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
-
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
