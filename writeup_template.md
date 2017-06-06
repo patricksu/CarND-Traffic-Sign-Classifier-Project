@@ -157,6 +157,8 @@ The LeNet has been applied on this dataset with satisfactory results. I modifed 
 
 Here are five German traffic signs that I found on the web:
 
+<img src="./web_images/image1.ipg" width="48">
+
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
