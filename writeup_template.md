@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 [image1]: ./report_images/Train_Count_by_Sign.png "Visualization"
 [image2]: ./report_images/Show_CLAHE.png "CLAHE"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image3]: ./report_images/valid_loss.png "valid loss curve"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
@@ -70,7 +70,7 @@ Here is an example of a traffic sign image before and after CLAHE.
 As a last step, I normalized the image data to be within (-1,1). Note that this is almos necessary for tanh or sigmoid activation fuctions, to avoid vanishing gradients. In this project, I used RELU activation function, which has constant gradients. Thus normalization is not as important as for tanh or sigmoid. But I still noticed prediction accuracy improvements. 
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-I tested an approach suggested by [published baseline model on this problem](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), by concatenating the stage 1 convolution output with the stage 2 convolution output as input to the fully-connected layer. However, this approach did not reduce the loss. Thus I used the original LeNet architecture from the lecture.
+I tested an approach suggested by [published baseline model on this problem](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf), by concatenating the stage 1 convolution output with the stage 2 convolution output as input to the fully-connected layer. However, this approach did not reduce the loss. Thus I used the LeNet architecture from the lecture, and added dropouts to the two convolution layers. 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
@@ -79,9 +79,11 @@ My final model consisted of the following layers:
 | Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Dropout  |  keep_prob = 0.8 |
 | Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16  |
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 5x5x6 				|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Dropout  |  keep_prob = 0.8 |
 | Fully connected		| 400 to 120 									|
 | RELU				|        									|
 | Fully connected		| 120 to 84 									|
@@ -92,10 +94,15 @@ My final model consisted of the following layers:
 |						|												|
  
 
-
 ####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+The hypermeters are shown below:
+Optimizer: Adam
+Batch size: 128
+Num of epoches: 80
+Learning rate: 0.001
+
+![alt text][image3]
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
