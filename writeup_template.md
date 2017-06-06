@@ -179,8 +179,10 @@ The highest probabilities of the five images are: 0.99, 1.00, 1.00, 1.00, and 1.
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-
+The first and second figure below are convolution layer1 output of a round-about sign image and a right-of-way sign image. As shown, convolution layer1 captures the edges on the images. 
+The thhird and fourth figure below are convolution layer2 output of a round-about sign image and a right-of-way sign image. There is no human detectable characteristics from these plots. 
 <img src="./report_images/round_about_sign_conv1.png" width="800">
+
 <img src="./report_images/row_sign_conv1.png" width="800">
 
 <img src="./report_images/round_about_sign_conv2.png" width="800">
