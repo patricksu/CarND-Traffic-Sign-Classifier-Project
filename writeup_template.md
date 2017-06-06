@@ -143,8 +143,8 @@ My final model results (using Step 3 model) were:
 * validation set accuracy of 0.965
 * test set accuracy of 0.958
 
-<img src="./report_images/misclassify_valid.png" width="400">
-<img src="./report_images/misclassify_test.png" width="400">
+<img src="./report_images/misclassify_valid.png" width="800">
+<img src="./report_images/misclassify_test.png" width="800">
 
 The LeNet has been applied on this dataset with satisfactory results. I modifed the architecture a little bit by reducing the number of filters and fully-connected nodes, and could not find any significant improvement (> 0.5%). With normalization,dropout and histogram equalization, I achieved 95.8% test accuracy. The final accuracy results show that my model works reasonably well. Note that loss results show some overfitting problems, as the training loss is 0.001, validation loss is 0.153, and test loss is 0.222. This is not a severe problem, as long as the accuracy prediction is good. 
  
@@ -180,3 +180,4 @@ The highest probabilities of the five images are: 0.99, 1.00, 1.00, 1.00, and 1.
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
+<img src="./report_images/roundabout_sign_conv1.png" width="800">
