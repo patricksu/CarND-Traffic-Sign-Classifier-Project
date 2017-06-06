@@ -67,21 +67,11 @@ Here is an example of a traffic sign image before and after CLAHE.
 
 ![alt text][image2]
 
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
+As a last step, I normalized the image data to be within (-1,1). Note that this is almos necessary for tanh or sigmoid activation fuctions, to avoid vanishing gradients. In this project, I used RELU activation function, which has constant gradients. Thus normalization is not as important as for tanh or sigmoid. But I still noticed prediction accuracy improvements. 
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
-
+[published baseline model on this problem](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
+I also 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
