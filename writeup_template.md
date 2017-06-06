@@ -109,6 +109,7 @@ Learning rate: 0.001
 Step 1: With grayscale convertion and normalizaton, I tested different dropout keep_probs. As shown the the table below, 0.8 seems to be an optimal value for dropout keep_prob.
 
 Grayscale + Normalize + Dropout
+
 |Dropout Keep_Prob| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------------:|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.5    | 0.140 | 0.979 | 0.356 | 0.923 | 0.363 | 0.912 |
@@ -119,6 +120,7 @@ Grayscale + Normalize + Dropout
 Step 2: I tested concatenating stage1 and stage2 outputs into fully-connected layer. Comparing the table below with the one above, we can see doing this does not improve performance.
 
 Grayscale + Normalize + Dropout (0.8) + TwoStageConcat
+
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.01 | 0.998 | 0.341 | 0.921 | 0.519 | 0.920 |
@@ -126,6 +128,7 @@ Grayscale + Normalize + Dropout (0.8) + TwoStageConcat
 Step 3: Instead of grayscaling, I tested histogram equalization which increases image contrastness. As shown below, doing this can improve the model. 
 
 Hist + Normalize + Dropout (0.8)
+
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.003 | 0.999 | 0.204 | 0.964 | 0.189 | 0.955 |
@@ -133,6 +136,7 @@ Hist + Normalize + Dropout (0.8)
 Step 4: I tested data augmentation by expanding the training data to be 4X big. In each of the 3 expanded images, one image is shifted and rotated by small random amounts. As shown below, it does not boost the model performance.
 
 Hist + Normalize + Dropout (0.8) + Augmentation (x4)
+
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.001 | 1.000 | 0.153 | 0.964 | 0.222 | 0.955 |
