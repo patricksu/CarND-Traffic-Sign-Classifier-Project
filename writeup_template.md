@@ -157,11 +157,8 @@ The LeNet has been applied on this dataset with satisfactory results. I modifed 
 
 Here are five German traffic signs that I found on the web:
 
-<img src="./web_images/img1.jpg" width="150">
-<img src="./web_images/img2.jpg" width="150">
-<img src="./web_images/img3.jpg" width="150">
-<img src="./web_images/img4.jpg" width="150">
-<img src="./web_images/img5.jpg" width="150">
+<img src="./web_images/img1.jpg" width="150"> <img src="./web_images/img2.jpg" width="150"> <img src="./web_images/img3.jpg" width="150"> <img src="./web_images/img4.jpg" width="150"> <img src="./web_images/img5.jpg" width="150">
+
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
