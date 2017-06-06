@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./report_images/Train_Count_by_Sign.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image2]: ./report_images/Show_CLAHE.png "CLAHE"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
@@ -51,7 +51,7 @@ signs data set:
 
 ####2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a bar chart showing how the train data distributes across the 43 traffic signs. The valid and test have very similar distributions, thus not shown here. 
 
 ![alt text][image1]
 
@@ -59,9 +59,11 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+I tested grayscale, normalization, histogram equalization, and data augmentation. Converting to grayscale does not improve the model's performance. It is suspected that the traffic signs have different colors. For example, alert-related signs such as stop sign have red, and some others are dominated by blue, such as the turning signs. Thus keeping three color channels will provide more information to the classification task. 
+For data augmentation, I did rotations and shifts by small random amount. I tested augmenting all the images by 3X, and augmenting only the under-sampled images to the same amount with the max (2010 images in a class). However, neither of the two approaches further improve the model's performance. 
+Normailzation and histogram equalization (I used CLAHE: Contrast Limited Adaptive Histogram Equalization) helped a lot. 
 
-Here is an example of a traffic sign image before and after grayscaling.
+Here is an example of a traffic sign image before and after CLAHE.
 
 ![alt text][image2]
 
