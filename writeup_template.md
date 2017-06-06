@@ -180,4 +180,8 @@ The highest probabilities of the five images are: 0.99, 1.00, 1.00, 1.00, and 1.
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
-<img src="./report_images/roundabout_sign_conv1.png" width="800">
+<img src="./report_images/round_about_sign_conv1.png" width="800">
+<img src="./report_images/row_sign_conv1.png" width="800">
+
+<img src="./report_images/round_about_sign_conv2.png" width="800">
+<img src="./report_images/row_sign_conv2.png" width="800">
