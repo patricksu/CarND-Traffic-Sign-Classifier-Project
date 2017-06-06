@@ -106,8 +106,9 @@ Learning rate: 0.001
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-Grayscale + Normalize + Dropout
+Step 1: With grayscale convertion and normalizaton, I tested different dropout keep_probs. As shown the the table below, 0.8 seems to be an optimal value for dropout keep_prob.
 
+Grayscale + Normalize + Dropout
 |Dropout Keep_Prob| Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------------:|:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.5    | 0.140 | 0.979 | 0.356 | 0.923 | 0.363 | 0.912 |
@@ -115,22 +116,23 @@ Grayscale + Normalize + Dropout
 | 0.8    | 0.015 | 0.997 | 0.308 | 0.950 | 0.315 | 0.937 |
 | 0.9    | 0.009 | 0.998 | 0.284 | 0.931 | 0.403 | 0.928 |
 
-Grayscale + Normalize + Dropout (0.8) + TwoStageConcat
+Step 2: I tested concatenating stage1 and stage2 outputs into fully-connected layer. Comparing the table below with the one above, we can see doing this does not improve performance.
 
+Grayscale + Normalize + Dropout (0.8) + TwoStageConcat
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.01 | 0.998 | 0.341 | 0.921 | 0.519 | 0.920 |
 
-## It is overfitted. May optimize with lower dropout keep_prob or L2 regularization. Experiment later.
+Step 3: Instead of grayscaling, I tested histogram equalization which increases image contrastness. As shown below, doing this can improve the model. 
 
 Hist + Normalize + Dropout (0.8)
-
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.003 | 0.999 | 0.204 | 0.964 | 0.189 | 0.955 |
 
-Hist + Normalize + Dropout (0.8) + Augmentation (x4)
+Step 4: I tested data augmentation by expanding the training data to be 4X big. In each of the 3 expanded images, one image is shifted and rotated by small random amounts. As shown below, it does not boost the model performance.
 
+Hist + Normalize + Dropout (0.8) + Augmentation (x4)
 | Train_Loss|Train_Acc|Valid_Loss|Valid_Acc|Test_Loss|Test_Acc|
 |:---------:| :------:| :------:| :-----:| :-----:| :-----:| 
 | 0.001 | 1.000 | 0.153 | 0.964 | 0.222 | 0.955 |
@@ -138,9 +140,9 @@ Hist + Normalize + Dropout (0.8) + Augmentation (x4)
 
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 1.000
+* validation set accuracy of 0.965
+* test set accuracy of 0.958
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
